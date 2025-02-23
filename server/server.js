@@ -1,10 +1,12 @@
 const app = require('./server-config.js');
 const routes = require('./server-routes.js');
 const userRoute = require('./routes/userRoute.js');
+const commentRoute = require('./routes/commentRoute.js');
 
 const port = process.env.PORT || 5000;
 
 app.use('/user', userRoute);
+app.use('/comment', commentRoute);
 
 app.get('/', routes.getAllTodos);
 app.get('/:id', routes.getTodo);
