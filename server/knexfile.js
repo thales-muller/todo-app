@@ -11,9 +11,9 @@ module.exports = {
     client: 'pg',
     connection: {
       host:     process.env.PGHOST,
-      user:     process.env.PGUSER,
-      password: process.env.PGPASSWORD,
-      database: process.env.PGDATABASE,
+      user:     'postgres',
+      password: '1234',
+      database: 'todo_app_test_db',
       port:     process.env.PGPORT
     },
     pool: {
@@ -22,7 +22,7 @@ module.exports = {
     },
     migrations: {
       tableName: 'knex_migrations',
-      directory: './migrations'
+      directory: './server/migrations'
     }
   },
 

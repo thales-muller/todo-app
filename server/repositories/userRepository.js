@@ -3,7 +3,8 @@ const knex = require('../database/connection');
 const tableName = 'users';
 
 const createUser = async (userData) => {
-    return await knex(tableName).insert(userData).returning('*');
+    const [user] = await knex(tableName).insert(userData).returning('*');
+    return user;
 }
 
 const findUserById = async (id) => {
