@@ -5,10 +5,11 @@ const commentRoute = require('./routes/commentRoute.js');
 
 const port = process.env.PORT || 5000;
 
+app.get('/', routes.getAllTodos);
 app.use('/user', userRoute);
 app.use('/comment', commentRoute);
 
-app.get('/', routes.getAllTodos);
+
 app.get('/:id', routes.getTodo);
 
 app.post('/', routes.postTodo);
